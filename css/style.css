@@ -1,0 +1,29 @@
+* { 
+	padding: 0;
+	margin: 0;
+}
+.container {
+	width: 100%;
+}
+video {
+	width: 100%;
+}
+
+.controls {
+	width: 99%;
+	margin: 0 auto;
+}
+#progress {
+	width: 100%;
+	display: block;
+}
+#play {
+	padding-left:10px;
+	float: left;
+}
+#volume,#fullscreen {
+	float: right;
+	padding: 10px;
+	background-color: blue;
+}
+/*http://www.creativebloq.com/html5/build-custom-html5-video-player-9134473*/
