@@ -11,26 +11,69 @@
 .container {
 	width: 100%;
 }
+.highlight {
+	color: orange;
+}
 video {
 	width: 100%;
-	position: relative;
 }
-
+button:active {
+	border: none;
+}
+progress {
+	height: 10px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	border: none;
+	border-radius: 5px;
+	height: 5px;
+}
+progress::-moz-progress-bar {
+	background-color: orange !important;
+}
+progress::-webkit-progress-bar {
+	border-radius: 5px;
+	height: 5px;
+}
+progress::-webkit-progress-value {
+	background-color: orange;
+	border-radius: 5px;
+	height: 5px;
+}
+progress::-moz-progress-bar {
+	border-radius: 5px;
+	height: 5px;
+}
+progress::-moz-progress-value {
+	background-color: orange;
+	border-radius: 5px;
+}
+.video-container {
+	overflow: auto;
+}
 .controls {
 	width: 100%;
 	margin: 0 auto;
-	overflow: auto;
 	position: relative;
-	top: -60px;
+	top: -50px;
+	height: 60px;
 }
 #progress {
 	width: 95%;
 	display: block;
-	margin: 0 auto;
+	margin: 0 auto 10px auto;
 }
 #play {
 	background: url("../icons/play-icon.png") no-repeat;
 	margin-left: 10px;
+}
+#play span {
+	padding-left: 20px;
+	color: white;
+	font-size: 1.35em;
+	font-weight: bold;
+	margin-top: -15px;
+	display: block;
 }
 #volume {
 	background: url("../icons/volume-off-icon.png") no-repeat;
@@ -46,9 +89,10 @@ video {
 	width: 95%;
 	margin: 0 auto;
 	font-size: 1.2em;
-	line-height: 1.5em;
+	line-height: 1.2em;
+	margin-top:-50px;
 }
 .transcript p {
-	padding: 15px 0;
+	padding-bottom: 15px;
+	margin-top:0 ;
 }
-/*http://www.creativebloq.com/html5/build-custom-html5-video-player-9134473*/
