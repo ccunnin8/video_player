@@ -2,28 +2,53 @@
 	padding: 0;
 	margin: 0;
 }
+.left {
+	float:left;
+}
+.right {
+	float: right;
+}
 .container {
 	width: 100%;
 }
 video {
 	width: 100%;
+	position: relative;
 }
 
 .controls {
-	width: 99%;
+	width: 100%;
 	margin: 0 auto;
+	overflow: auto;
+	position: relative;
+	top: -60px;
 }
 #progress {
-	width: 100%;
+	width: 95%;
 	display: block;
+	margin: 0 auto;
 }
 #play {
-	padding-left:10px;
-	float: left;
+	background: url("../icons/play-icon.png") no-repeat;
+	margin-left: 10px;
 }
-#volume,#fullscreen {
-	float: right;
-	padding: 10px;
-	background-color: blue;
+#volume {
+	background: url("../icons/volume-off-icon.png") no-repeat;
+}
+#fullscreen {
+	background: url("../icons/fullscreen-icon.png") no-repeat;
+}
+.controls button  {
+	padding: 20px;
+	border: none;
+}
+.transcript {
+	width: 95%;
+	margin: 0 auto;
+	font-size: 1.2em;
+	line-height: 1.5em;
+}
+.transcript p {
+	padding: 15px 0;
 }
 /*http://www.creativebloq.com/html5/build-custom-html5-video-player-9134473*/
