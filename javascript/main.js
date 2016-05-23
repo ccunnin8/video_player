@@ -8,7 +8,7 @@ var progress = document.getElementById("progress");
 var audio = document.getElementById("volume");
 var progressBar = document.getElementById("progress-bar");
 var totalDuration, 
-	currentTime 
+	currentTime;
 //function gets called during the timeupdate event listener to highlight text accordingly 
 
 var highlighter = function(time) {
@@ -79,12 +79,13 @@ var highlighter = function(time) {
 }
 //convert seconds to minute 00:00
 var timeConvert = function(seconds) {
+	seconds = Math.round(seconds);
 	if (seconds < 60) {
 		if (seconds < 10) {
-			return "00:0" + Math.round(seconds);
+			return "00:0" + seconds;
 		}
 		else {
-			return "00:" + Math.round(seconds);
+			return "00:" + seconds;
 		}
 	}
 	else {
@@ -112,21 +113,21 @@ var timeConvert = function(seconds) {
 playButton.addEventListener("click",function(e){
 	if (video.paused || video.ended) {
 		video.play();
-		$("#play").css("background","url('icons/pause-icon.png') no-repeat");
+		$("#play").css("background","url('icons/play-icon.png') no-repeat");
 	}
 	else {
 		video.pause();
-		$("#play").css("background","url('icons/play-icon.png') no-repeat");
+		$("#play").css("background","url('icons/pause-icon.png') no-repeat");
 	}
 });
 //mute audio and change icon
 audio.addEventListener("click",function(e){
 	video.muted = !video.muted;
 	if (video.muted) {
-		$("#volume").css("background","url('icons/volume-on-icon.png') no-repeat");
+		$("#volume").css("background","url('icons/volume-off-icon.png') no-repeat");
 	}
 	else {
-		$("#volume").css("background","url('icons/volume-off-icon.png') no-repeat");
+		$("#volume").css("background","url('icons/volume-on-icon.png') no-repeat");
 	}
 });
 //update progress bar as video plays 
@@ -149,7 +150,7 @@ progress.addEventListener("click",function(e){
 	video.currentTime = pos * video.duration;
 });
 //go full screen 
-fullScreen.addEventListener("click",function(e){
+document.getElementById("fullscreen").addEventListener("click",function(e){
 	if (video.requestFullScreen) {
 		video.requestFullScreen();
 	} else if (video.webkitRequestFullScreen){
@@ -160,10 +161,64 @@ fullScreen.addEventListener("click",function(e){
 		video.mozRequestFullScreen();
 	}
 });
+//shows play button, pause button, audio control and fullscreen when hovered and hides when not hovered 
 $(".video-container").hover(function(){
 	$("button").show();	
-	$(".controls").css("top", "-60px" );
+	$(".controls").removeClass("hover-off").addClass("hover-on");
 }, function(){
 	$("button").hide();
-	$(".controls").css( "top", "-30px" );
+	$(".controls").removeClass("hover-on").addClass("hover-off");
+});
+//click on text, changes time in video
+$("p span").click(function(){
+	switch ($(this).attr("id")) {
+		case "1":
+			video.currentTime = 0.24;
+			break;
+		case "2":
+			video.currentTime = 4.2;
+			break;
+		case "3":
+			video.currentTime = 7.6;
+			break;
+		case "4":
+			video.currentTime = 11.3;
+			break;
+		case "5":
+			video.currentTime = 14;
+			break;
+		case "6": 
+			video.currentTime = 18;
+			break;
+		case "7": 
+			video.currentTime = 24;
+			break;
+		case "8":
+			video.currentTime = 27;
+			break;
+		case "9": 
+			video.currentTime = 33;
+			break;
+		case "10":
+			video.currentTime = 35;
+			break;
+		case "11":
+			video.currentTime = 40;
+			break;
+		case "12":
+			video.currentTime = 43;
+			break;
+		case "13":
+			video.currentTime = 47;
+			break;
+		case "14":
+			video.currentTime = 50;
+			break;
+		case "15":
+			video.currentTime = 54;
+			break;
+		case "16":
+			video.currentTime = 59;
+			break;
+	}
 });
