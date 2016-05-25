@@ -113,11 +113,11 @@ var timeConvert = function(seconds) {
 playButton.addEventListener("click",function(e){
 	if (video.paused || video.ended) {
 		video.play();
-		$("#play").css("background","url('icons/play-icon.png') no-repeat");
+		$("#play").css("background","url('icons/pause-icon.png') no-repeat");
 	}
 	else {
 		video.pause();
-		$("#play").css("background","url('icons/pause-icon.png') no-repeat");
+		$("#play").css("background","url('icons/play-icon.png') no-repeat");
 	}
 });
 //mute audio and change icon
